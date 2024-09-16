@@ -51,6 +51,7 @@ import kit4 from '../images/kit4.png';
 import his from '../images/his.png';
 import amz from '../images/amz.png';
 import { Link } from "react-router-dom";
+import './normal.css';
 
 
 export default function Home()
@@ -93,18 +94,18 @@ export default function Home()
 {/* Top & NavBar */}
 
             <Row>
-                <Col xs={1} >
+                <Col  xs={6} md={2} lg={1} >
                 <Link to={'/'} >
                 <img src="https://zeevector.com/wp-content/uploads/LOGO/Amazon-India-Logo-PNG-White.png" style={{width:"100px",height:"50px"}} />   
                 </Link>
                 </Col>
 
-                <Col xs={3} className="text-center" >
+                <Col xs={6} md={6} lg={3} className="text-center" >
                 <p>Delivering to Coimbatore 641015 <br></br>
                  <b> <IoLocationOutline /> Update Location </b> </p>
                 </Col>
 
-                <Col xs={5} className="seach">
+                <Col xs={12} md={6} lg={5} className="seach">
                 <select className=" bg-light mt-1" style={{width:"60px" ,height:"44px"}}>
                     <option value="">All </option>
                     <option value="Allxa Skils"> Allxa Skils </option>
@@ -142,7 +143,7 @@ export default function Home()
                 {selectedCountry.name}
               </Dropdown.Toggle>
 
-              <Dropdown.Menu >
+              <Dropdown.Menu  >
                 {countryFlags.map((country, index) => (
                   <Dropdown.Item key={index}  onClick={() => handleCountrySelect(country)}>
                     <img
@@ -159,26 +160,28 @@ export default function Home()
             </Dropdown>      
             </Col>
 
-            <Col xs={1} className="">
-                <Dropdown className="bg-dark">
-                <Dropdown.Toggle className="text-white" id="dropdown-basic">
-                   Sign in  <br></br>
-                   <b>Accounts </b>
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1"> <img src={amz} /> </Dropdown.Item>
-                </Dropdown.Menu>
-                </Dropdown>   
-            </Col>
+            <Col xs={6} md={2} lg={1} className="custom-class">
+  <Dropdown className="bg-dark">
+    <Dropdown.Toggle className="text-white" id="dropdown-basic">
+      Sign in <br />
+      <b>Accounts</b>
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      <Dropdown.Item href="#/action-1">
+        <img src={amz} />
+      </Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+</Col>
 
-            <Col xs={1} className="text-white bg-dark text-center">
-            <Link to={'/signin'} style={{textDecoration:"none" , color:"White"}}>
-                <p>  Returns & <br></br>
-                <b> Orders </b></p> 
-              </Link>            
-            </Col>
+<Col xs={6} md={2} lg={1} className="custom-class text-white bg-dark text-center">
+  <Link to={'/signin'} style={{ textDecoration: "none", color: "White" }}>
+    <p>Returns & <br />
+      <b>Orders</b></p>
+  </Link>
+</Col>
 
-            <Col xs={1} className="text-center">
+            <Col xs={6} md={2} lg={1} className="custom-cart text-center">
             <Link to={'/cart'} style={{textDecoration:"none", color:"white"}} >          
             <IoCartOutline  style={{fontSize:"40px"}}/> <br></br>
              Cart 
@@ -187,7 +190,7 @@ export default function Home()
             </Row>
 
             <Row  style={{backgroundColor:"rgb(35,47,62)"}}>
-            <Col xs={10}>
+            <Col xs={12} lg={10}>
         <Nav variant="underline" >
       <Nav.Item>
         <Nav.Link style={{ color: "white", marginLeft:"15px" }} > <FaBars />  All</Nav.Link>
@@ -225,7 +228,7 @@ export default function Home()
     </Nav>
     </Col>
 
-        <Col xs={2}>
+        <Col xs={12} lg={2}>
         </Col>
     </Row>
     </Container>   

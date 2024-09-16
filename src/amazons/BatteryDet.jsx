@@ -94,20 +94,18 @@ export default function BatteryDet()
           quantity: 1,
         };
     
-        // Get the current cart from localStorage
+
         let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     
-        // Check if the item is already in the cart
         const existingItemIndex = cartItems.findIndex(cartItem => cartItem.id === item.id);
         if (existingItemIndex >= 0) {
-          // Item is already in the cart; update the quantity
+        
           cartItems[existingItemIndex].quantity += 1;
         } else {
-          // Item is not in the cart; add it
+          
           cartItems.push(item);
         }
     
-        // Save the updated cart to localStorage
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
     
         // Show success notification
@@ -123,23 +121,23 @@ export default function BatteryDet()
     return(
         <>
 
-        <Container fluid className="top p-2 bg-dark text-white">
+<Container fluid className="top p-2 bg-dark text-white">
 
 {/* Top & NavBar */}
 
             <Row>
-                <Col xs={1} >
+                <Col  xs={6} md={2} lg={1} >
                 <Link to={'/'} >
                 <img src="https://zeevector.com/wp-content/uploads/LOGO/Amazon-India-Logo-PNG-White.png" style={{width:"100px",height:"50px"}} />   
-                </Link>                
+                </Link>
                 </Col>
 
-                <Col xs={3} className="text-center" >
+                <Col xs={6} md={6} lg={3} className="text-center" >
                 <p>Delivering to Coimbatore 641015 <br></br>
                  <b> <IoLocationOutline /> Update Location </b> </p>
                 </Col>
 
-                <Col xs={5} className="seach">
+                <Col xs={12} md={6} lg={5} className="seach">
                 <select className=" bg-light mt-1" style={{width:"60px" ,height:"44px"}}>
                     <option value="">All </option>
                     <option value="Allxa Skils"> Allxa Skils </option>
@@ -159,10 +157,12 @@ export default function BatteryDet()
                     <option value="Garden & Outdoors"> Garden & Outdoors </option>
                     <option value="Home & Kitchen "> Home & Kitchen </option>
                 </select>
-                <input type="text" className="p-2 mt-1"  style={{width:"60%"}}
+                <input type="text" className="p-2 mt-1"  
+                style={{width:"60%"}}
                 placeholder="Search Amazon" /> 
                 <span className="p-2" style={{backgroundColor:"rgb(254,189 ,105)"}} > <FaSearch style={{marginBottom:"5px",width:"40px"}} /> </span>
-                
+
+
                 <Dropdown as={ButtonGroup}   style={{width:"30px",marginLeft:"10px"}}>
               <Dropdown.Toggle  className="p-2 bg-white text-black" id="dropdown-basic">
                 <img
@@ -175,7 +175,7 @@ export default function BatteryDet()
                 {selectedCountry.name}
               </Dropdown.Toggle>
 
-              <Dropdown.Menu >
+              <Dropdown.Menu  >
                 {countryFlags.map((country, index) => (
                   <Dropdown.Item key={index}  onClick={() => handleCountrySelect(country)}>
                     <img
@@ -192,40 +192,37 @@ export default function BatteryDet()
             </Dropdown>      
             </Col>
 
-            <Col xs={1} className="">
-                <Dropdown className="bg-dark">
-                <Dropdown.Toggle className="text-white" id="dropdown-basic">
-                   Sign in  <br></br>
-                   <b>Accounts </b>
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1"> <img src={amz} /> </Dropdown.Item>
-                </Dropdown.Menu>
-                </Dropdown>   
-            </Col>
+            <Col xs={6} md={2} lg={1} className="custom-class">
+  <Dropdown className="bg-dark">
+    <Dropdown.Toggle className="text-white" id="dropdown-basic">
+      Sign in <br />
+      <b>Accounts</b>
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      <Dropdown.Item href="#/action-1">
+        <img src={amz} />
+      </Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+</Col>
 
-            <Col xs={1} className="text-white bg-dark text-center">
-            <Link to={'/signin'} style={{textDecoration:"none", color:"White"}}  >
-                <p>  Returns & <br></br>
-                <b> Orders </b></p> 
-              </Link>            
-            </Col>
+<Col xs={6} md={2} lg={1} className="custom-class text-white bg-dark text-center">
+  <Link to={'/signin'} style={{ textDecoration: "none", color: "White" }}>
+    <p>Returns & <br />
+      <b>Orders</b></p>
+  </Link>
+</Col>
 
-            <Col xs={1} className="text-center">
-            <Link to={'/cart'} style={{textDecoration:"none", color:"white"}} >
+            <Col xs={6} md={2} lg={1} className="custom-cart text-center">
+            <Link to={'/cart'} style={{textDecoration:"none", color:"white"}} >          
             <IoCartOutline  style={{fontSize:"40px"}}/> <br></br>
-            {cartItems.length > 0 && (
-                <Badge className="ml-1" bg="danger">
-                  {cartItems.length}
-                </Badge>
-              )}
              Cart 
-             </Link>
-            </Col>
+             </Link> 
+            </Col>         
             </Row>
 
             <Row  style={{backgroundColor:"rgb(35,47,62)"}}>
-            <Col xs={10}>
+            <Col xs={12} lg={10}>
         <Nav variant="underline" >
       <Nav.Item>
         <Nav.Link style={{ color: "white", marginLeft:"15px" }} > <FaBars />  All</Nav.Link>
@@ -263,12 +260,12 @@ export default function BatteryDet()
     </Nav>
     </Col>
 
-
-        <Col xs={2}>
+        <Col xs={12} lg={2}>
         </Col>
     </Row>
+    </Container>   
 
-    </Container>  
+
 
     <Container fluid>
     <Row className="text-dark bg-white">
@@ -282,7 +279,7 @@ export default function BatteryDet()
 
     <Container fluid>
         <Row className="">
-            <Col xs={6} >
+            <Col xs={12} md={6} >
         <div className="image-gallery custom-image-gallery">
          <ImageGallery
          items={images}
@@ -294,7 +291,7 @@ export default function BatteryDet()
         </div>       
             </Col>
 
-            <Col xs={4} className="mt-5">
+            <Col xs={12} md={6} className="mt-5">
             <h4> Luminous Inverter & Battery Combo for Home,Office & Shops|Power Sine 800 Pure Sine Wave 700VA/12V Inverter with RC18000ST PRO Short Tubular 150Ah Battery |Warranty: 24 month(Inverter)&36month(Battery)  </h4>
             <p> Visit the Luminous Store </p>
             <img src={require('../images/s8.png')} width="180px"  /> 
@@ -338,7 +335,7 @@ export default function BatteryDet()
             <br /> 
             </Col>
 
-            <Col xs={2} className="card p-3">
+            <Col xs={12} md={4} className="card p-3">
             
             With Exchange  
             <p className="text-danger" > Up to  <MdCurrencyRupee /> 3,550.00 off </p>
@@ -404,15 +401,15 @@ export default function BatteryDet()
 
     <h3 className="p-2"> Brands in this category on Amazon </h3>
     <Row className="text-center">
-      <Col xs={4}>
+      <Col xs={12} md={4}>
       <img src={require('../images/cd3.png')} width="90%" /> 
       </Col>
 
-      <Col xs={4}>
+      <Col xs={12} md={4}>
       <img src={require('../images/cd4.png')} width="90%" /> 
       </Col>
 
-      <Col xs={4}>
+      <Col xs={12} md={4}>
       <img src={require('../images/cd5.png')} width="90%" /> 
       </Col>
     </Row>
@@ -420,12 +417,12 @@ export default function BatteryDet()
 
     <Container>
       <Row>
-        <Col xs={2}>
+        <Col xs={12} md={2}>
         </Col>
-        <Col xs={8}>
+        <Col xs={12} md={8}>
         <img src={require('../images/cd6.png')} width="100%" /> 
         </Col>
-        <Col xs={2}>
+        <Col xs={12} md={2}>
         </Col>
       </Row>
     </Container>
@@ -434,10 +431,10 @@ export default function BatteryDet()
 
     <Container fluid className="bg-white p-2">  
        <Row className="bg-white text-dark text-center">
-       <Col xs={4}>
+       <Col xs={12} md={4}>
        </Col>
 
-        <Col xs={4} className="w-100">
+        <Col xs={12} md={4} className="w-100">
         <p> See personalized recommendations </p>
       <Link to={'/signin'} style={{textDecoration:"none"}} >
        <Button className="w-25" variant="warning">Sign in</Button>{' '}
@@ -446,7 +443,7 @@ export default function BatteryDet()
        <p> New customer?  </p>
        </Col>
 
-       <Col xs={4}>
+       <Col xs={12} md={4}>
        </Col>
        </Row>
        <hr></hr>
@@ -466,7 +463,7 @@ export default function BatteryDet()
 
       <Container className=" bg-dark w-75">
         <Row className="mt-5">
-          <Col xs={3} className="text-left">
+          <Col xs={12} md={3} className="text-left">
           <h5> Get to Know Us </h5>
          <p> About Us </p>
          <p> Careers </p>
@@ -474,14 +471,14 @@ export default function BatteryDet()
          <p> Amazon Science </p>
           </Col>
 
-          <Col xs={3} className="text-left">
+          <Col xs={12} md={3} className="text-left">
           <h5> Connect with Us </h5>
           <p> Facebook </p>
           <p>Twitter </p>
           <p>Instagram </p>
           </Col>
 
-          <Col xs={3} className="text-left">
+          <Col xs={12} md={3} className="text-left">
           <h5> 	Make Money with Us </h5>
           <p>Sell on Amazon </p>
           <p>Sell under Amazon Accelerator </p>
@@ -494,7 +491,7 @@ export default function BatteryDet()
 
           </Col>
 
-          <Col xs={3} className="text-left">
+          <Col xs={12} md={3} className="text-left">
           <h5> Let Us Help You </h5>
           <p>COVID-19 and Amazon </p>
           <p>Your Account </p>
@@ -539,240 +536,6 @@ export default function BatteryDet()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState } from 'react';
-// import { Container, Row, Col, Button, Dropdown, Nav, Badge } from 'react-bootstrap';
-// import { IoLocationOutline, IoCartOutline } from 'react-icons/io5';
-// import { FaSearch } from 'react-icons/fa';
-// import { Link } from 'react-router-dom';
-// import ImageGallery from 'react-image-gallery';
-// import 'react-image-gallery/styles/css/image-gallery.css';
-// import { MdCurrencyRupee } from 'react-icons/md';
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-// import './normal.css';
-// import amz from '../images/amz.png';
-// import s8 from '../images/s8.png'; // Changed from require to import
-// import det1 from '../images/det1.png'; // Changed from require to import
-
-// const BatteryDet = () => {
-//   const [selectedCountry, setSelectedCountry] = useState({
-//     name: 'Country',
-//     flag: 'https://dummyimage.com/20x15/ccc/000&text=Flag',
-//   });
-
-//   const handleCountrySelect = (country) => {
-//     setSelectedCountry(country);
-//   };
-
-//   const countryFlags = [
-//     { name: 'India', flag: 'https://media.geeksforgeeks.org/wp-content/uploads/20200630132503/iflag.jpg' },
-//     { name: 'USA', flag: 'https://media.geeksforgeeks.org/wp-content/uploads/20200630132504/uflag.jpg' },
-//     { name: 'England', flag: 'https://media.geeksforgeeks.org/wp-content/uploads/20200630132502/eflag.jpg' },
-//     { name: 'Brazil', flag: 'https://media.geeksforgeeks.org/wp-content/uploads/20200630132500/bflag.jpg' },
-//   ];
-
-//   const images = [
-//     { original: 'https://m.media-amazon.com/images/I/61pUvWJ3afL._SX522_.jpg', thumbnail: 'https://m.media-amazon.com/images/I/61pUvWJ3afL._SX522_.jpg' },
-//     { original: 'https://m.media-amazon.com/images/I/71KbewnC4OL._SX425_.jpg', thumbnail: 'https://m.media-amazon.com/images/I/71KbewnC4OL._SX425_.jpg' },
-//     { original: 'https://m.media-amazon.com/images/I/71tCF4B7oyL._SX425_.jpg', thumbnail: 'https://m.media-amazon.com/images/I/71tCF4B7oyL._SX425_.jpg' },
-//     { original: 'https://m.media-amazon.com/images/I/71E6QowrNUL._SX425_.jpg', thumbnail: 'https://m.media-amazon.com/images/I/71E6QowrNUL._SX425_.jpg' },
-//     { original: 'https://m.media-amazon.com/images/I/71InjRzsjsL._SX425_.jpg', thumbnail: 'https://m.media-amazon.com/images/I/71InjRzsjsL._SX425_.jpg' },
-//     { original: 'https://m.media-amazon.com/images/I/71jQzS8KeuL._SX425_.jpg', thumbnail: 'https://m.media-amazon.com/images/I/71jQzS8KeuL._SX425_.jpg' },
-//   ];
-
-  // const handleAddToCart = () => {
-  //   // Define the item to add to the cart
-  //   const item = {
-  //     id: Date.now(), // Unique identifier for the item
-  //     title: 'Luminous Inverter & Battery Combo for Home, Office & Shops',
-  //     price: 15099.00,
-  //     image: 'https://m.media-amazon.com/images/I/61pUvWJ3afL._SX522_.jpg',
-  //     quantity: 1,
-  //   };
-
-  //   // Get the current cart from localStorage
-  //   let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-
-  //   // Check if the item is already in the cart
-  //   const existingItemIndex = cartItems.findIndex(cartItem => cartItem.id === item.id);
-  //   if (existingItemIndex >= 0) {
-  //     // Item is already in the cart; update the quantity
-  //     cartItems[existingItemIndex].quantity += 1;
-  //   } else {
-  //     // Item is not in the cart; add it
-  //     cartItems.push(item);
-  //   }
-
-  //   // Save the updated cart to localStorage
-  //   localStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-  //   // Show success notification
-  //   toast.success('Item added to cart!');
-  // };
-
-  // // Get cart items count
-  // const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-
-//   return (
-//     <>
-//       <Container fluid className="top p-2 bg-dark text-white">
-//         <Row>
-//           <Col xs={1}>
-//             <Link to="/">
-//               <img src="https://zeevector.com/wp-content/uploads/LOGO/Amazon-India-Logo-PNG-White.png" style={{ width: '100px', height: '50px' }} alt="Logo" />
-//             </Link>
-//           </Col>
-//           <Col xs={3} className="text-center">
-//             <p>Delivering to Coimbatore 641015 <br />
-//               <b><IoLocationOutline /> Update Location</b>
-//             </p>
-//           </Col>
-//           <Col xs={5} className="seach">
-//             <select className="bg-light mt-1" style={{ width: '60px', height: '44px' }}>
-//               <option value="">All</option>
-//               {/* Add more options as needed */}
-//             </select>
-//             <input type="text" className="p-2 mt-1" style={{ width: '60%' }} placeholder="Search Amazon" />
-//             <span className="p-2" style={{ backgroundColor: 'rgb(254,189,105)' }}>
-//               <FaSearch style={{ marginBottom: '5px', width: '40px' }} />
-//             </span>
-//             <Dropdown>
-//               <Dropdown.Toggle className="p-2 bg-white text-black" id="dropdown-basic">
-//                 <img src={selectedCountry.flag} alt={selectedCountry.name} width="20" height="15" style={{ marginRight: '5px' }} />
-//                 {selectedCountry.name}
-//               </Dropdown.Toggle>
-//               <Dropdown.Menu>
-//                 {countryFlags.map((country, index) => (
-//                   <Dropdown.Item key={index} onClick={() => handleCountrySelect(country)}>
-//                     <img src={country.flag} alt={country.name} width="20" height="15" style={{ marginRight: '5px' }} />
-//                     {country.name}
-//                   </Dropdown.Item>
-//                 ))}
-//               </Dropdown.Menu>
-//             </Dropdown>
-//           </Col>
-//           <Col xs={1}>
-//             <Dropdown className="bg-dark">
-//               <Dropdown.Toggle className="text-white" id="dropdown-basic">
-//                 Sign in<br />
-//                 <b>Accounts</b>
-//               </Dropdown.Toggle>
-//               <Dropdown.Menu>
-//                 <Dropdown.Item href="#/action-1"><img src={amz} alt="Amazon" /></Dropdown.Item>
-//               </Dropdown.Menu>
-//             </Dropdown>
-//           </Col>
-//           <Col xs={1} className="text-white bg-dark text-center">
-//             <Link to="/signin" style={{ textDecoration: 'none', color: 'White' }}>
-//               <p>Returns &<br />
-//                 <b>Orders</b>
-//               </p>
-//             </Link>
-//           </Col>
-//           <Col xs={1} className="text-center">
-//             <Link to="/cart" style={{ textDecoration: 'none', color: 'white' }}>
-//               <IoCartOutline style={{ fontSize: '40px' }} /><br />
-              // {cartItems.length > 0 && (
-              //   <Badge className="ml-1" bg="danger">
-              //     {cartItems.length}
-              //   </Badge>
-              // )}
-//               Cart
-//             </Link>
-//           </Col>
-//         </Row>
-//         <Row style={{ backgroundColor: 'rgb(35,47,62)' }}>
-//           <Col xs={10}>
-//             <Nav variant="underline">
-//               <Nav.Item>
-//                 <Nav.Link style={{ color: 'white', marginLeft: '15px' }}>All</Nav.Link>
-//               </Nav.Item>
-//               <Nav.Item>
-//                 <Nav.Link style={{ color: 'white', marginLeft: '10px' }}>Today's Deals</Nav.Link>
-//               </Nav.Item>
-//               {/* Add more Nav items as needed */}
-//             </Nav>
-//           </Col>
-//           <Col xs={2}></Col>
-//         </Row>
-//         <Container fluid>
-//           <Row className="text-dark bg-white">
-//             <p className="mt-3">1-16 of 490 results for <span style={{ color: 'orangered', fontWeight: 'bold' }}>"inverter battery"</span></p>
-//           </Row>
-//         </Container>
-//         <hr />
-//         <Container fluid>
-//           <Row>
-//             <Col xs={6}>
-//               <div className="image-gallery custom-image-gallery">
-//                 <ImageGallery
-//                   items={images}
-//                   showIndex={false}
-//                   showFullscreenButton={false}
-//                   showPlayButton={false}
-//                   slideOnThumbnailOver={true}
-//                   width={100}
-//                 />
-//               </div>
-//             </Col>
-//             <Col xs={4} className="mt-5">
-//               <h4>Luminous Inverter & Battery Combo for Home, Office & Shops | Power Sine 800 Pure Sine Wave 700VA/12V Inverter with RC18000ST PRO Short Tubular 150Ah Battery | Warranty: 24 months (Inverter) & 36 months (Battery)</h4>
-//               <p>Visit the Luminous Store</p>
-//               <img src={s8} width="180px" alt="Store" />
-//               <hr />
-//               <img src={det1} width="100%" alt="Details" />
-//               <hr />
-//               <Row>
-//                 <Col xs={6}>
-//                   <p><b>Brand</b></p>
-//                   <p><b>Recommended Uses For Product</b></p>
-//                   <p><b>Power Source</b></p>
-//                   <p><b>Wattage</b></p>
-//                   <p><b>Item Dimensions LxWxH</b></p>
-//                 </Col>
-//                 <Col xs={6}>
-//                   <p>Luminous</p>
-//                   <p>Office</p>
-//                   <p>Electric</p>
-//                   <p>700 Watts</p>
-//                   <p>37 x 29 x 21 Centimeters</p>
-//                 </Col>
-//               </Row>
-//               <hr />
-//               <h5>Price: <span><MdCurrencyRupee /></span> 15,099.00</h5>
-//               <p>Inclusive of all taxes</p>
-//               <hr />
-//               <Button variant="warning" onClick={handleAddToCart}>Add to Cart</Button>
-//             </Col>
-//           </Row>
-//         </Container>
-//       </Container>
-
-//       {/* Toast container for notifications */}
-//       <ToastContainer />
-//     </>
-//   );
-// };
-
-// export default BatteryDet;
 
 
 

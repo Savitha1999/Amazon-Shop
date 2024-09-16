@@ -49,23 +49,23 @@ export default function Kitchen()
     return(
         <>
 
-        <Container fluid className="top p-2 bg-dark text-white">
+<Container fluid className="top p-2 bg-dark text-white">
 
 {/* Top & NavBar */}
 
             <Row>
-                <Col xs={1} >
-                <Link to={'/'}>
+                <Col  xs={6} md={2} lg={1} >
+                <Link to={'/'} >
                 <img src="https://zeevector.com/wp-content/uploads/LOGO/Amazon-India-Logo-PNG-White.png" style={{width:"100px",height:"50px"}} />   
                 </Link>
                 </Col>
 
-                <Col xs={3} className="text-center" >
+                <Col xs={6} md={6} lg={3} className="text-center" >
                 <p>Delivering to Coimbatore 641015 <br></br>
                  <b> <IoLocationOutline /> Update Location </b> </p>
                 </Col>
 
-                <Col xs={5} className="seach">
+                <Col xs={12} md={6} lg={5} className="seach">
                 <select className=" bg-light mt-1" style={{width:"60px" ,height:"44px"}}>
                     <option value="">All </option>
                     <option value="Allxa Skils"> Allxa Skils </option>
@@ -85,10 +85,12 @@ export default function Kitchen()
                     <option value="Garden & Outdoors"> Garden & Outdoors </option>
                     <option value="Home & Kitchen "> Home & Kitchen </option>
                 </select>
-                <input type="text" className="p-2 mt-1"  style={{width:"60%"}}
+                <input type="text" className="p-2 mt-1"  
+                style={{width:"60%"}}
                 placeholder="Search Amazon" /> 
                 <span className="p-2" style={{backgroundColor:"rgb(254,189 ,105)"}} > <FaSearch style={{marginBottom:"5px",width:"40px"}} /> </span>
-                
+
+
                 <Dropdown as={ButtonGroup}   style={{width:"30px",marginLeft:"10px"}}>
               <Dropdown.Toggle  className="p-2 bg-white text-black" id="dropdown-basic">
                 <img
@@ -101,7 +103,7 @@ export default function Kitchen()
                 {selectedCountry.name}
               </Dropdown.Toggle>
 
-              <Dropdown.Menu >
+              <Dropdown.Menu  >
                 {countryFlags.map((country, index) => (
                   <Dropdown.Item key={index}  onClick={() => handleCountrySelect(country)}>
                     <img
@@ -118,35 +120,37 @@ export default function Kitchen()
             </Dropdown>      
             </Col>
 
-            <Col xs={1} className="">
-                <Dropdown className="bg-dark">
-                <Dropdown.Toggle className="text-white" id="dropdown-basic">
-                   Sign in  <br></br>
-                   <b>Accounts </b>
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1"> <img src={amz} /> </Dropdown.Item>
-                </Dropdown.Menu>
-                </Dropdown>   
-            </Col>
+            <Col xs={6} md={2} lg={1} className="custom-class">
+  <Dropdown className="bg-dark">
+    <Dropdown.Toggle className="text-white" id="dropdown-basic">
+      Sign in <br />
+      <b>Accounts</b>
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      <Dropdown.Item href="#/action-1">
+        <img src={amz} />
+      </Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+</Col>
 
-            <Col xs={1} className="text-white bg-dark text-center">
-            <Link to={'/signin'} style={{textDecoration:"none" , color:"White"}}>
-                <p>  Returns & <br></br>
-                <b> Orders </b></p> 
-              </Link>            
-            </Col>
+<Col xs={6} md={2} lg={1} className="custom-class text-white bg-dark text-center">
+  <Link to={'/signin'} style={{ textDecoration: "none", color: "White" }}>
+    <p>Returns & <br />
+      <b>Orders</b></p>
+  </Link>
+</Col>
 
-            <Col xs={1} className="text-center">
-            <Link to={'/cart'} style={{textDecoration:"none" , color:"white"}}>
+            <Col xs={6} md={2} lg={1} className="custom-cart text-center">
+            <Link to={'/cart'} style={{textDecoration:"none", color:"white"}} >          
             <IoCartOutline  style={{fontSize:"40px"}}/> <br></br>
              Cart 
-             </Link>
-            </Col>
+             </Link> 
+            </Col>         
             </Row>
 
             <Row  style={{backgroundColor:"rgb(35,47,62)"}}>
-            <Col xs={10}>
+            <Col xs={12} lg={10}>
         <Nav variant="underline" >
       <Nav.Item>
         <Nav.Link style={{ color: "white", marginLeft:"15px" }} > <FaBars />  All</Nav.Link>
@@ -184,12 +188,12 @@ export default function Kitchen()
     </Nav>
     </Col>
 
-
-        <Col xs={2}>
+        <Col xs={12} lg={2}>
         </Col>
     </Row>
+    </Container>   
 
-    </Container>  
+
 
     <Container fluid>
     <Row className="text-dark bg-white">
@@ -200,392 +204,168 @@ export default function Kitchen()
 
    
    {/* Kitchen Section */}
-
-   <Container fluid className="">
-    <Row>
-        <Col xs={2} style={{borderRight:"1px solid black"}}>
-        <h6>
-        Recently used filters <br></br>
-        Delivery Day
-        </h6>
-        <input type="checkbox" /> Get It Today
-
-        <hr></hr>
-
-        <h6> Delivery Day </h6>
-        <input type="checkbox" /> Get It Today
-        <br></br>
-        <input type="checkbox" /> Get It by Tomorrow
-        <br></br>
-        <input type="checkbox" /> Get It in 2 Days
-        <br />
-        <br />
-
-        <h6> Local Market </h6>
-        <input type="checkbox" /> Amazon Fresh
-        <br />
-        <br />
-
-        <h6> Category </h6>
-        <p> 
-         Home & Kitchen <br></br>
-         Kitchen Tools <br></br>
-         Kitchen Racks & Holders <br></br>
-         Kitchen Linens <br></br>
-         Bathroom Hardware <br></br>
-         Reuseable Cleaning Cloths  <br></br>
-         Kitchen Fixtures 
-        </p>
-        <br />
-        <h6> Customer Review  </h6>
-        <img src={require('../images/str.png')} />
-        <br />
-
-        <h6> Brands </h6>
-        <input type="checkbox" /> CAROTE
-        <br></br>
-        <input type="checkbox" /> Pigeon
-        <br></br>
-        <input type="checkbox" /> Scotch-Brite
-        <br></br>
-        <input type="checkbox" /> SOLIMO
-        <br></br>
-        <input type="checkbox" /> Suzec
-        <br></br>
-        <input type="checkbox" /> Status Contract
-        <br></br>
-        <input type="checkbox" /> ABOUT SPACE
-        <br></br>
-        <input type="checkbox" /> GLUN
-        <br></br>
-        <input type="checkbox" /> Vinod
-        <br></br>
-        <input type="checkbox" /> Gala
-        <br></br>
-        <input type="checkbox" /> CELLO
-        <br></br>
-        <input type="checkbox" /> Plantex
-        <br></br>
-        <input type="checkbox" /> MILTON
-        <br></br>
-        <input type="checkbox" /> SOFTSPUN
-        <br></br>
-        <input type="checkbox" /> Fackelmann
-        <br></br>
-        <input type="checkbox" /> Fiskars
-        <br />
-        <br />
-
-        <h6> Price </h6>
-        Rs.32 _ Rs.351,800 
-        <Box sx={{ width:150}}>
-      <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
-    </Box>
-    <br />
-  
-
-    <h6> Deals & Discounts </h6>
-    <p>  
-    All Discounts <br></br>
-    Today's Deals
-    </p>
-    <br />
-   
-    <h6> Item Condition </h6>
-    <p> New </p>
-    <br></br>
-    
-    <h6> Kitchen Top Brands </h6>
-    <input type="checkbox" /> Top Brands
-    <br></br>
-    <input type="checkbox" /> Made for Amazon
-    <br />
-    <br />
-
-    <h6> Number of Pieces  </h6>
-    <input type="checkbox" /> 1
-        <br></br>
-        <input type="checkbox" /> 2
-        <br></br>
-        <input type="checkbox" /> 3
-        <br></br>
-        <input type="checkbox" /> 4
-        <br></br>
-        <input type="checkbox" /> 5-8
-        <br></br>
-        <input type="checkbox" /> 9-16
-        <br></br>
-        <input type="checkbox" /> 17-24
-        <br></br>
-        <input type="checkbox" /> 25-32
-        <br></br>
-        <input type="checkbox" /> 33-44
-        <br></br>
-        <input type="checkbox" /> 45-60
-        <br></br>
-        <input type="checkbox" /> 61 & More
-        <br></br>
-        <br />
-        <br />
-
-   
-
-    <h6> Pay On Delivery </h6>
-    <input type="checkbox" /> Eligible for Pay On Delivery
-    <br />
-    <br />
-
-
-    <h6> New Arrivals </h6>
-    <p>  
-    Last 30 days <br></br>
-    Last 90 days
-    </p>
-    <br></br>
-  
-
-    <h6> Discount  </h6>
-        <p> 
-        10% Off or more <br></br>
-        25% Off or more <br></br>
-        35% Off or more <br></br>
-        50% Off or more <br></br>
-        60% Off or more <br></br>
-        70% Off or more  <br></br>
-        </p>
-        <br></br>
-
-    <h6> Seller </h6>
-    <input type="checkbox" /> <input type="checkbox" /> Plantex
-        <br></br>
-        <input type="checkbox" /> NIRLON KITCHENWARE PRIVATE LIMITED - MUMBAI
-        <br></br>
-        <input type="checkbox" /> Club Bollywood SYD
-        <br></br>
-        <input type="checkbox" /> ETrade Online
-        <br></br>
-        <input type="checkbox" /> TheGlobalGenie
-        <br></br>
-        <input type="checkbox" /> GUDMART ®
-        <br></br>
-        <input type="checkbox" /> S.K. Art
-    <br />
-    <br />
-     
-    <h6> Availability </h6> 
-    <input type="checkbox" /> Include Out of Stock
-    <br />
-
-    </Col>
-
-    <Col xs={10} >
-    <Link to={'/kitchendet'} style={{textDecoration:"none"}} >
-    <Row>
-        <Col xs={6}>
-        <Carousel controls={true} indicators={false} interval={1000} >
-      <Carousel.Item>
-        <img 
-          className="d-block w-100"
-          src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/0cca392e-641c-4182-ad05-ccc3455c0943._CR0,0,1200,628_SX507_AGmerlin_QL70_.jpg"
-          alt="First slide"
-        />
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/1cff2523-f3ef-4717-80bc-c83ef647f906._CR0,274,1999,1047_SX507_AGmerlin_QL70_.jpg"
-          alt="Second slide"
-        />
-        </Carousel.Item>
-        </Carousel>
+   <Container fluid className="p-3">
+      <Row>
+        <Col xs={12} md={3} lg={2} className="border-end border-dark">
+          <h6>Recently used filters</h6>
+          <p>Delivery Day</p>
+          <input type="checkbox" /> Get It Today
+          <hr />
+          <p>Delivery Day</p>
+          <input type="checkbox" /> Get It Today<br />
+          <input type="checkbox" /> Get It by Tomorrow<br />
+          <input type="checkbox" /> Get It in 2 Days<br /><br />
+          <p>Local Market</p>
+          <input type="checkbox" /> Amazon Fresh<br /><br />
+          <p>Category</p>
+          <p>
+            Home & Kitchen<br />
+            Kitchen Tools<br />
+            Kitchen Racks & Holders<br />
+            Kitchen Linens<br />
+            Bathroom Hardware<br />
+            Reusable Cleaning Cloths<br />
+            Kitchen Fixtures
+          </p><br />
+          <p>Customer Review</p>
+          <img src={require('../images/str.png')} className="img-fluid" alt="Rating" /><br />
+          <p>Brands</p>
+          {['CAROTE', 'Pigeon', 'Scotch-Brite', 'SOLIMO', 'Suzec', 'Status Contract', 'ABOUT SPACE', 'GLUN', 'Vinod', 'Gala', 'CELLO', 'Plantex', 'MILTON', 'SOFTSPUN', 'Fackelmann', 'Fiskars'].map((brand, index) => (
+            <div key={index}>
+              <input type="checkbox" /> {brand}<br />
+            </div>
+          ))}
+          <p>Price</p>
+          Rs.32 _ Rs.351,800
+          <Box sx={{ width: '100%' }}>
+            <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
+          </Box>
+          <br />
+          <p>Deals & Discounts</p>
+          <p>All Discounts<br />Today's Deals</p><br />
+          <p>Item Condition</p>
+          <p>New</p><br />
+          <p>Kitchen Top Brands</p>
+          <input type="checkbox" /> Top Brands<br />
+          <input type="checkbox" /> Made for Amazon<br /><br />
+          <p>Number of Pieces</p>
+          {['1', '2', '3', '4', '5-8', '9-16', '17-24', '25-32', '33-44', '45-60', '61 & More'].map((pieces, index) => (
+            <div key={index}>
+              <input type="checkbox" /> {pieces}<br />
+            </div>
+          ))}
+          <p>Pay On Delivery</p>
+          <input type="checkbox" /> Eligible for Pay On Delivery<br /><br />
+          <p>New Arrivals</p>
+          <p>Last 30 days<br />Last 90 days</p><br />
+          <p>Discount</p>
+          <p>
+            10% Off or more<br />
+            25% Off or more<br />
+            35% Off or more<br />
+            50% Off or more<br />
+            60% Off or more<br />
+            70% Off or more
+          </p><br />
+          <p>Seller</p>
+          {['Plantex', 'NIRLON KITCHENWARE PRIVATE LIMITED - MUMBAI', 'Club Bollywood SYD', 'ETrade Online', 'TheGlobalGenie', 'GUDMART ®', 'S.K. Art'].map((seller, index) => (
+            <div key={index}>
+              <input type="checkbox" /> {seller}<br />
+            </div>
+          ))}
+          <p>Availability</p>
+          <input type="checkbox" /> Include Out of Stock
         </Col>
-
-        <Col xs={2} className="card">
-        <img src={require('../images/kr1.png')} />
+        <Col xs={12} md={9} lg={10}>
+          <Link to={'/kitchendet'} style={{ textDecoration: "none" }}>
+            <Row>
+              <Col xs={12} md={8} lg={6}>
+                <Carousel controls={true} indicators={false} interval={1000}>
+                  <Carousel.Item>
+                    <img
+                      className="d-block w-100"
+                      src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/0cca392e-641c-4182-ad05-ccc3455c0943._CR0,0,1200,628_SX507_AGmerlin_QL70_.jpg"
+                      alt="First slide"
+                    />
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <img
+                      className="d-block w-100"
+                      src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/1cff2523-f3ef-4717-80bc-c83ef647f906._CR0,274,1999,1047_SX507_AGmerlin_QL70_.jpg"
+                      alt="Second slide"
+                    />
+                  </Carousel.Item>
+                </Carousel>
+              </Col>
+              <Col xs={6} md={2} className="d-flex justify-content-center">
+                <img src={require('../images/kr1.png')} className="img-fluid" alt="Image 1" />
+              </Col>
+              <Col xs={6} md={2} className="d-flex justify-content-center">
+                <img src={require('../images/kr2.png')} className="img-fluid" alt="Image 2" />
+              </Col>
+            </Row>
+            <br />
+            <h4><b>Results</b></h4>
+            <p>
+              Check each product page for other buying options. Price and other details may vary based on product size and colour.
+            </p>
+            <Row className="mt-3">
+              {['kt1.png', 'kt2.png', 'kt3.png', 'kt4.png', 'kt5.png', 'kt6.png', 'kt7.png', 'kt8.png', 'kt9.png', 'kt10.png', 'kt11.png', 'kt12.png', 'kt13.png', 'kt14.png', 'kt15.png', 'kt16.png', 'kt17.png', 'kt18.png', 'kt19.png', 'kt20.png'].map((image, index) => (
+                <Col xs={6} md={3} lg={2} key={index} className="d-flex justify-content-center mb-3">
+                  <img src={require(`../images/${image}`)} className="img-fluid" alt={`Image ${index + 1}`} />
+                </Col>
+              ))}
+            </Row>
+            <hr />
+            <h3 className="p-3">Brands related to your search</h3>
+            <Row>
+              {['0cca392e-641c-4182-ad05-ccc3455c0943._CR0,0,1200,628_SX920_QL70_.jpg', '897f4311-959f-4820-b561-be85381c1a39._CR0,0,1200,628_SX920_QL70_.jpg', '160ca066-1278-4e43-99e4-e86d4e459a77._CR0,0,1200,628_SX920_QL70_.jpeg'].map((img, index) => (
+                <Col xs={12} md={4} key={index} className="d-flex justify-content-center mb-3">
+                  <img
+                    src={`https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/${img}`}
+                    className="img-fluid"
+                    alt={`Brand ${index + 1}`}
+                  />
+                </Col>
+              ))}
+            </Row>
+          </Link>
         </Col>
-        <Col xs={2} className="card">
-        <img src={require('../images/kr2.png')} />
-        </Col>
-        <Col xs={2}>
-        </Col>
-    </Row>
-
-    <br />
-    <br />
-
-    <h4> <b> Results </b> </h4>
-    <p>  
-    Check each product page for other buying options. Price and other details may vary based on product size and colour.    
-    </p>
-
-    <Row>
-        <Col xs={3} className="card">
-        <img src={require('../images/kt1.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/kt2.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/kt3.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/kt4.png')} />
-        </Col>
-    </Row>
-
-    
-    <Row className="mt-3">
-        <Col xs={3} className="card">
-        <img src={require('../images/kt5.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/kt6.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/kt7.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/kt8.png')} />
-        </Col>
-    </Row>
-
-    <h4 className="p-3"> More Results </h4>
-
-    <Row>
-        <Col xs={3} className="card">
-        <img src={require('../images/kt9.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/kt10.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/kt11.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/kt12.png')} />
-        </Col>
-    </Row>
-
-    
-    <Row className="mt-3">
-        <Col xs={3} className="card">
-        <img src={require('../images/kt13.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/kt14.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/kt15.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/kt16.png')} />
-        </Col>
-    </Row>
-
-    <Row className="mt-3">
-        <Col xs={3} className="card">
-        <img src={require('../images/kt17.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/kt18.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/kt19.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/kt20.png')} />
-        </Col>
-    </Row>
-    <br />
-    <br />
-    <br />
-
-    <hr></hr>
-   
-    <h3 className="p-3"> Brands related to your search  </h3>
-    <Row>
-        <Col xs={4} >
-        <img style={{width:"90%",height:"200px", marginLeft:"5%"}} src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/0cca392e-641c-4182-ad05-ccc3455c0943._CR0,0,1200,628_SX920_QL70_.jpg" />
-        <br />
-        <br></br>
-        <img style={{marginLeft:"40%" ,height:"20%",width:"20%"}} src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/6b9af555-7309-4503-9acc-872057ff4db0._CR0,0,600,600_AC_SX278_SY200_QL70_.png"/>
-        </Col>
-
-        <Col xs={4} >
-        <img style={{width:"90%",height:"200px", marginLeft:"5%"}} src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/897f4311-959f-4820-b561-be85381c1a39._CR0,0,1200,628_SX920_QL70_.jpg"/>
-        <br />
-        <br></br>
-        <img style={{marginLeft:"30%" ,height:"50px",width:"40%"}} src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/7b4b6c28-5d87-438b-affa-08cd790df850._CR0,0,1000,1000_AC_SX278_SY200_QL70_.png"/>
-        </Col>
-
-        <Col xs={4} >
-        <img style={{width:"90%",height:"200px", marginLeft:"5%"}} src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/160ca066-1278-4e43-99e4-e86d4e459a77._CR0,0,1200,628_SX920_QL70_.jpeg" />
-        <br />
-        <br />
-        <img style={{marginLeft:"30%" ,height:"50px",width:"40%"}} src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/618c299b-dbc4-4e69-a4f0-b3a78c39788d._CR0,0,400,400_AC_SX278_SY200_QL70_.png" />
-        </Col>
-
-    </Row>
-    </Link>
-
-    </Col>
-    </Row>
-   </Container>
-   <br />
-   <br />
-   <hr></hr>
-
-   <h2 className="p-2 mt-3" > Recommended based on your browsing history </h2>
-   <Container className="bg-white mt-2">
-    <Row>
-    <img src={require('../images/dec.png')} />
-    </Row>
-   </Container>
-   <br />
- 
-   <h2 className="p-2 mt-3" > Customers who viewed items in your browsing history also viewed </h2>
-   <Container  className="bg-white mt-2">    <Row>
-    <img src={require('../images/kct.png')} />
-    </Row>
-   </Container>
-   <br />
-   <hr></hr>
-
-   <Container fluid className="bg-white p-2">  
-       <Row className="bg-white text-dark text-center">
-       <Col xs={4}>
-       </Col>
-
-        <Col xs={4} className="w-100">
-        <p> See personalized recommendations </p>
-        <Link to={'/signin'} style={{textDecoration:"none"}} >
-       <Button className="w-25" variant="warning">Sign in</Button>{' '}
-       </Link>       <br></br>
-       <p> New customer?  </p>
-       </Col>
-
-       <Col xs={4}>
-       </Col>
-       </Row>
-       <hr></hr>
-
-       </Container>
-
+      </Row>
+      <br />
+      <br />
+      <hr />
+      <h2 className="p-2 mt-3">Recommended based on your browsing history</h2>
+      <Container className="bg-white mt-2">
+        <Row>
+          <img src={require('../images/dec.png')} className="img-fluid" alt="Recommended" />
+        </Row>
+      </Container>
+      <br />
+      <h2 className="p-2 mt-3">Customers who viewed items in your browsing history also viewed</h2>
+      <Container className="bg-white mt-2">
+        <Row>
+          <img src={require('../images/kct.png')} className="img-fluid" alt="Customers also viewed" />
+        </Row>
+      </Container>
+      <br />
+      <hr />
+      <Container fluid className="bg-white p-2">
+        <Row className="text-dark text-center">
+          <Col xs={12} md={4} />
+          <Col xs={12} md={4}>
+            <p>See personalized recommendations</p>
+            <Link to={'/signin'} style={{ textDecoration: "none" }}>
+              <Button className="w-50" variant="warning">Sign in</Button>
+            </Link>
+            <br />
+            <p>New customer?</p>
+          </Col>
+          <Col xs={12} md={4} />
+        </Row>
+        <hr />
+      </Container>
+    </Container>
 
     
     {/* Footer Section */}

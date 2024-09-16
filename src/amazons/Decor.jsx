@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import './normal.css';
 
 
 
@@ -51,23 +52,23 @@ export default function Decor()
     return(
         <>
 
-        <Container fluid className="top p-2 bg-dark text-white">
+<Container fluid className="top p-2 bg-dark text-white">
 
 {/* Top & NavBar */}
 
             <Row>
-                <Col xs={1} >
+                <Col  xs={6} md={2} lg={1} >
                 <Link to={'/'} >
                 <img src="https://zeevector.com/wp-content/uploads/LOGO/Amazon-India-Logo-PNG-White.png" style={{width:"100px",height:"50px"}} />   
-                </Link>                
+                </Link>
                 </Col>
 
-                <Col xs={3} className="text-center" >
+                <Col xs={6} md={6} lg={3} className="text-center" >
                 <p>Delivering to Coimbatore 641015 <br></br>
                  <b> <IoLocationOutline /> Update Location </b> </p>
                 </Col>
 
-                <Col xs={5} className="seach">
+                <Col xs={12} md={6} lg={5} className="seach">
                 <select className=" bg-light mt-1" style={{width:"60px" ,height:"44px"}}>
                     <option value="">All </option>
                     <option value="Allxa Skils"> Allxa Skils </option>
@@ -87,10 +88,12 @@ export default function Decor()
                     <option value="Garden & Outdoors"> Garden & Outdoors </option>
                     <option value="Home & Kitchen "> Home & Kitchen </option>
                 </select>
-                <input type="text" className="p-2 mt-1"  style={{width:"60%"}}
+                <input type="text" className="p-2 mt-1"  
+                style={{width:"60%"}}
                 placeholder="Search Amazon" /> 
                 <span className="p-2" style={{backgroundColor:"rgb(254,189 ,105)"}} > <FaSearch style={{marginBottom:"5px",width:"40px"}} /> </span>
-                
+
+
                 <Dropdown as={ButtonGroup}   style={{width:"30px",marginLeft:"10px"}}>
               <Dropdown.Toggle  className="p-2 bg-white text-black" id="dropdown-basic">
                 <img
@@ -103,7 +106,7 @@ export default function Decor()
                 {selectedCountry.name}
               </Dropdown.Toggle>
 
-              <Dropdown.Menu >
+              <Dropdown.Menu  >
                 {countryFlags.map((country, index) => (
                   <Dropdown.Item key={index}  onClick={() => handleCountrySelect(country)}>
                     <img
@@ -120,35 +123,37 @@ export default function Decor()
             </Dropdown>      
             </Col>
 
-            <Col xs={1} className="">
-                <Dropdown className="bg-dark">
-                <Dropdown.Toggle className="text-white" id="dropdown-basic">
-                   Sign in  <br></br>
-                   <b>Accounts </b>
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1"> <img src={amz} /> </Dropdown.Item>
-                </Dropdown.Menu>
-                </Dropdown>   
-            </Col>
+            <Col xs={6} md={2} lg={1} className="custom-class">
+  <Dropdown className="bg-dark">
+    <Dropdown.Toggle className="text-white" id="dropdown-basic">
+      Sign in <br />
+      <b>Accounts</b>
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      <Dropdown.Item href="#/action-1">
+        <img src={amz} />
+      </Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+</Col>
 
-            <Col xs={1} className="text-white bg-dark text-center">
-            <Link to={'/signin'} style={{textDecoration:"none" , color:"White"}}>
-                <p>  Returns & <br></br>
-                <b> Orders </b></p> 
-              </Link>           
-            </Col>
+<Col xs={6} md={2} lg={1} className="custom-class text-white bg-dark text-center">
+  <Link to={'/signin'} style={{ textDecoration: "none", color: "White" }}>
+    <p>Returns & <br />
+      <b>Orders</b></p>
+  </Link>
+</Col>
 
-            <Col xs={1} className="text-center">
-            <Link to={'/cart'} style={{textDecoration:"none",color:"white"}}>
+            <Col xs={6} md={2} lg={1} className="custom-cart text-center">
+            <Link to={'/cart'} style={{textDecoration:"none", color:"white"}} >          
             <IoCartOutline  style={{fontSize:"40px"}}/> <br></br>
              Cart 
-             </Link>
-            </Col>
+             </Link> 
+            </Col>         
             </Row>
 
             <Row  style={{backgroundColor:"rgb(35,47,62)"}}>
-            <Col xs={10}>
+            <Col xs={12} lg={10}>
         <Nav variant="underline" >
       <Nav.Item>
         <Nav.Link style={{ color: "white", marginLeft:"15px" }} > <FaBars />  All</Nav.Link>
@@ -186,12 +191,12 @@ export default function Decor()
     </Nav>
     </Col>
 
-
-        <Col xs={2}>
+        <Col xs={12} lg={2}>
         </Col>
     </Row>
+    </Container>   
 
-    </Container>  
+ 
 
     <Container fluid>
     <Row className="text-dark bg-white">
@@ -203,303 +208,157 @@ export default function Decor()
    
    {/* Decor Section */}
 
-   <Container fluid className="">
+   <Container fluid>
     <Row>
-        <Col xs={2} style={{borderRight:"1px solid black"}}>
-        <h6>
-        Recently used filters <br></br>
-        Delivery Day
-        </h6>
+      <Col xs={12} md={4} lg={2} style={{borderRight: "1px solid black", padding: '1rem'}}>
+        <h6>Recently used filters</h6>
         <input type="checkbox" /> Get It Today
-
-        <hr></hr>
-
-        <h6> Delivery Day </h6>
+        <hr />
+        <h6>Delivery Day</h6>
         <input type="checkbox" /> Get It Today
-        <br></br>
+        <br />
         <input type="checkbox" /> Get It by Tomorrow
-        <br></br>
+        <br />
         <input type="checkbox" /> Get It in 2 Days
-        <br />
-        <br />
-
-        <h6> Local Market </h6>
+        <br /><br />
+        <h6>Local Market</h6>
         <input type="checkbox" /> Amazon Fresh
-        <br />
-        <br />
-
-        <h6> Category </h6>
-        <p> 
-         Home & Kitchen <br></br>
-         Wall Sculptures <br></br>
-         Idols & Figurines <br></br>
-         Artificial Plants <br></br>
-         Wall Shelves <br></br>
-         Vases  <br></br>
-         Paintings <br></br> 
-         Decorative Signs & Plaques
+        <br /><br />
+        <h6>Category</h6>
+        <p>
+          Home & Kitchen <br />
+          Wall Sculptures <br />
+          Idols & Figurines <br />
+          Artificial Plants <br />
+          Wall Shelves <br />
+          Vases <br />
+          Paintings <br />
+          Decorative Signs & Plaques
         </p>
         <br />
-        <h6> Customer Review  </h6>
-        <img src={require('../images/str.png')} />
+        <h6>Customer Review</h6>
+        <img src={require('../images/str.png')} alt="Review" style={{ width: '100%' }} />
         <br />
-
-        <h6> Brands </h6>
-        <input type="checkbox" /> Homesake
-        <br></br>
-        <input type="checkbox" /> TIED RIBBONS
-        <br></br>
-        <input type="checkbox" /> amazon basics
-        <br></br>
-        <input type="checkbox" /> CraftVatika
-        <br></br>
-        <input type="checkbox" /> SATYAM KRAFT
-        <br></br>
-        <input type="checkbox" /> Bikri Kendra
-        <br></br>
-        <input type="checkbox" /> eCraftIndia
-        <br></br>
-        <input type="checkbox" /> Webelkart
-        <br></br>
-        <input type="checkbox" /> Sehaz Artworks
-        <br></br>
-        <input type="checkbox" /> SPHINX
-        <br></br>
-        <input type="checkbox" /> SOLIMO
-        <br></br>
-        <input type="checkbox" /> Global Grabbers
-        <br></br>
-        <input type="checkbox" /> Painting Mantra
-        <br></br>
-        <input type="checkbox" /> Heart Home
-        <br></br>
-        <input type="checkbox" /> AuraDecor
-        <br></br>
-        <input type="checkbox" /> Art Street
+        <h6>Brands</h6>
+        {/* List of checkboxes */}
+        {['Homesake', 'TIED RIBBONS', 'amazon basics', 'CraftVatika', 'SATYAM KRAFT', 'Bikri Kendra', 'eCraftIndia', 'Webelkart', 'Sehaz Artworks', 'SPHINX', 'SOLIMO', 'Global Grabbers', 'Painting Mantra', 'Heart Home', 'AuraDecor', 'Art Street'].map((brand) => (
+          <div key={brand}>
+            <input type="checkbox" /> {brand}
+            <br />
+          </div>
+        ))}
         <br />
+        <h6>Price</h6>
+        Rs.35 _ Rs.54,300
+        <Box sx={{ width: '100%' }}>
+          <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
+        </Box>
         <br />
-
-        <h6> Price </h6>
-        Rs.35 _ Rs.54,300 
-        <Box sx={{ width:150}}>
-      <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
-    </Box>
-    <br />
-  
-
-    <h6> Deals & Discounts </h6>
-    <p>  
-    All Discounts <br></br>
-    Today's Deals
-    </p>
-    <br />
-   
-    <h6> Item Condition </h6>
-    <p> New </p>
-    <br></br>
-    
-    <h6> Made for Amazon </h6>
-    <input type="checkbox" /> Made for Amazon
-    <br />
-    <br />
-   
-
-    <h6> Pay On Delivery </h6>
-    <input type="checkbox" /> Eligible for Pay On Delivery
-    <br />
-    <br />
-
-
-    <h6> New Arrivals </h6>
-    <p>  
-    Last 30 days <br></br>
-    Last 90 days
-    </p>
-    <br></br>
-  
-
-    <h6> Discount  </h6>
-        <p> 
-        10% Off or more <br></br>
-        25% Off or more <br></br>
-        35% Off or more <br></br>
-        50% Off or more <br></br>
-        60% Off or more <br></br>
-        70% Off or more  <br></br>
+        <h6>Deals & Discounts</h6>
+        <p>
+          All Discounts <br />
+          Today's Deals
         </p>
-        <br></br>
-
-    <h6> Seller </h6>
-    <input type="checkbox" /> ETrade Online
-    <br></br>
-    <input type="checkbox" /> Clicktech Retail
-    <br />
-    <br />
-     
-    <h6> Availability </h6> 
-    <input type="checkbox" /> Include Out of Stock
-    <br />
-
-    </Col>
-
-    <Col xs={10} >
-
-  <Link to={'/decordet'} style={{textDecoration:"none"}} >
-
-    <img src={require('../images/dc.png')} width="100%" />
-    <br />
-    <br />
-
-    <h4> <b> Results </b> </h4>
-    <p>  
-    Check each product page for other buying options. Price and other details may vary based on product size and colour.
-    </p>
-
-    <Row>
-        <Col xs={3} className="card">
-        <img src={require('../images/c1.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/c2.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/c3.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/c4.png')} />
-        </Col>
-    </Row>
-
-    
-    <Row className="mt-4">
-        <Col xs={3} className="card">
-        <img src={require('../images/c5.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/c6.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/c7.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/c8.png')} />
-        </Col>
-    </Row>
-
-    <h4 className="p-3"> <b>More Results </b>  </h4>
-
-    <Row>
-        <Col xs={3} className="card">
-        <img src={require('../images/c9.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/c10.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/c11.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/c12.png')} />
-        </Col>
-    </Row>
-
-    
-    <Row className="mt-3">
-        <Col xs={3} className="card">
-        <img src={require('../images/c13.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/c14.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/c15.png')} />
-        </Col>
-
-        <Col xs={3} className="card">
-        <img src={require('../images/c16.png')} />
-        </Col>
-    </Row>
-    <br />
-    <br />
-    <br />
-
-    <hr></hr>
-   
-    <h3 className="p-3"> Brands related to your search  </h3>
-    <Row>
-        <Col xs={4} >
-        <img style={{width:"90%",height:"200px", marginLeft:"5%"}} src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/8980a543-7c8f-4115-8e85-6a3bf099602e._CR0,0,1200,628_SX920_QL70_.jpg" />
         <br />
-        <br></br>
-        <img style={{marginLeft:"25%" ,height:"30px",width:"50%"}} src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/4793155d-9884-48a7-9226-7f18dab821d2._CR0,0,400,400_AC_SX278_SY200_QL70_.jpg"/>
-        </Col>
-
-        <Col xs={4} >
-        <img style={{width:"90%",height:"200px", marginLeft:"5%"}} src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/1ad0a83b-74a3-4951-948b-7beeef960496._CR0,0,1200,628_SX920_QL70_.jpg"/>
+        <h6>Item Condition</h6>
+        <p>New</p>
         <br />
-        <br></br>
-        <img style={{marginLeft:"25%" ,height:"50px",width:"50%"}} src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/a4a6df63-978d-48de-9da1-a268098f17fd._CR0,0,800,800_AC_SX278_SY200_QL70_.png"/>
-        </Col>
-
-        <Col xs={4} >
-        <img style={{width:"90%",height:"200px", marginLeft:"5%"}} src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/35bd783a-a4a6-4c40-a759-129a0d3bc7f6._CR0,1423,2268,1187_SX920_QL70_.jpg" />
+        <h6>Made for Amazon</h6>
+        <input type="checkbox" /> Made for Amazon
+        <br /><br />
+        <h6>Pay On Delivery</h6>
+        <input type="checkbox" /> Eligible for Pay On Delivery
+        <br /><br />
+        <h6>New Arrivals</h6>
+        <p>
+          Last 30 days <br />
+          Last 90 days
+        </p>
         <br />
+        <h6>Discount</h6>
+        <p>
+          10% Off or more <br />
+          25% Off or more <br />
+          35% Off or more <br />
+          50% Off or more <br />
+          60% Off or more <br />
+          70% Off or more
+        </p>
         <br />
-        <img style={{marginLeft:"40%" ,height:"20%",width:"20%"}} src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/4dc4d5a1-a5ea-468b-98c2-5e8780b70d0f._CR0,0,400,400_AC_SX278_SY200_QL70_.jpg" />
+        <h6>Seller</h6>
+        <input type="checkbox" /> ETrade Online
+        <br />
+        <input type="checkbox" /> Clicktech Retail
+        <br /><br />
+        <h6>Availability</h6>
+        <input type="checkbox" /> Include Out of Stock
+        <br />
+      </Col>
+
+      <Col xs={12} md={8} lg={10}>
+        <Link to={'/decordet'} style={{ textDecoration: "none" }}>
+          <img src={require('../images/dc.png')} alt="Decor" width="100%" />
+          <br /><br />
+          <h4><b>Results</b></h4>
+          <p>Check each product page for other buying options. Price and other details may vary based on product size and colour.</p>
+          <Row>
+            {['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'c10', 'c11', 'c12', 'c13', 'c14', 'c15', 'c16'].map((img, index) => (
+              <Col xs={6} sm={3} key={index} className="card">
+                <img src={require(`../images/${img}.png`)} alt={`Card ${img}`} style={{ width: '100%' }} />
+              </Col>
+            ))}
+          </Row>
+          <h4 className="p-3"><b>More Results</b></h4>
+          <Row>
+            {['c9', 'c10', 'c11', 'c12', 'c13', 'c14', 'c15', 'c16'].map((img, index) => (
+              <Col xs={6} sm={3} key={index} className="card">
+                <img src={require(`../images/${img}.png`)} alt={`Card ${img}`} style={{ width: '100%' }} />
+              </Col>
+            ))}
+          </Row>
+          <br /><br /><br />
+          <hr />
+          <h3 className="p-3">Brands related to your search</h3>
+          <Row>
+            {['image1', 'image2', 'image3'].map((image, index) => (
+              <Col xs={12} sm={4} key={index}>
+                <img src={`https://example.com/${image}.jpg`} alt={`Brand ${image}`} style={{ width: '90%', height: 'auto', marginLeft: '5%' }} />
+                <br /><br />
+                <img src={`https://example.com/${image}-small.png`} alt={`Brand ${image} small`} style={{ marginLeft: '25%', height: '30px', width: '50%' }} />
+              </Col>
+            ))}
+          </Row>
+        </Link>
+      </Col>
+    </Row>
+    <br /><br />
+    <hr />
+    <h2 className="p-2 mt-3">Recommended based on your browsing history</h2>
+    <Container className="bg-white mt-2">
+      <Row>
+        <img src={require('../images/dec.png')} alt="Recommendation" style={{ width: '100%' }} />
+      </Row>
+    </Container>
+    <br />
+    <hr />
+    <Container fluid className="bg-white p-2">
+      <Row className="bg-white text-dark text-center">
+        <Col xs={12} md={4}>
         </Col>
-
-    </Row>
-    </Link>
-
-    </Col>
-    </Row>
-   </Container>
-   <br />
-   <br />
-   <hr></hr>
-
-   <h2 className="p-2 mt-3" > Recommended based on your browsing history </h2>
-   <Container  className="bg-white mt-2">
-    <Row>
-    <img src={require('../images/dec.png')} />
-    </Row>
-   </Container>
-   <br />
-   <hr></hr>
-
-   <Container fluid className="bg-white p-2">  
-       <Row className="bg-white text-dark text-center">
-       <Col xs={4}>
-       </Col>
-
-        <Col xs={4} className="w-100">
-        <p> See personalized recommendations </p>
-        <Link to={'/signin'} style={{textDecoration:"none"}} >
-       <Button className="w-25" variant="warning">Sign in</Button>{' '}
-       </Link>       
-       <br></br>
-       <p> New customer?  </p>
-       </Col>
-
-       <Col xs={4}>
-       </Col>
-       </Row>
-       <hr></hr>
-
-       </Container>
-
-
+        <Col xs={12} md={4}>
+          <p>See personalized recommendations</p>
+          <Link to={'/signin'} style={{ textDecoration: "none" }}>
+            <Button className="w-100" variant="warning">Sign in</Button>
+          </Link>
+          <br />
+          <p>New customer?</p>
+        </Col>
+        <Col xs={12} md={4}>
+        </Col>
+      </Row>
+      <hr />
+    </Container>
+  </Container>
     
     {/* Footer Section */}
 

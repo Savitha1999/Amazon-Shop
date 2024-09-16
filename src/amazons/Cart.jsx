@@ -43,11 +43,12 @@ export default function Cart() {
     };
 
     return (
+        
         <Container className="bg-dark text-white p-3 mt-3">
             <h2 className="bg-light text-dark text-center p-3">Your Cart</h2>
             <Row>
                 {cartItems.length === 0 ? (
-                    <Col xs={12}>
+                    <Col xs={12} >
                         <p>Your cart is empty</p>
                     </Col>
                 ) : (
