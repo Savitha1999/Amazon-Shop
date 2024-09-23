@@ -95,7 +95,7 @@ export default function Cart() {
             </Row>
             <Row className="mt-3">
                 <Col xs={12} className="text-center ">
-                    <Link to="/" style={{ textDecoration: "none" }}>
+                    <Link to="/amazon" style={{ textDecoration: "none" }}>
                         <Button variant="primary">Continue Shopping</Button>
                     </Link>
                 </Col>

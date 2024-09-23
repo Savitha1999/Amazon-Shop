@@ -95,7 +95,7 @@ export default function Home()
 
             <Row>
                 <Col  xs={6} md={2} lg={1} >
-                <Link to={'/'} >
+                <Link to={'/amazon'} >
                 <img src="https://zeevector.com/wp-content/uploads/LOGO/Amazon-India-Logo-PNG-White.png" style={{width:"100px",height:"50px"}} />   
                 </Link>
                 </Col>
@@ -236,13 +236,13 @@ export default function Home()
 
 
     {/* Carousel Section */}
-<Container fluid className="bg-light">
-    <Row>
+<Container fluid className="bg-light mt-1">
+    <Row style={{cursor:"pointer"}}>
 
     <Carousel data-bs-theme="dark"  >
       <Carousel.Item style={{height:"350px"}}>
         <img 
-          className="d-block w-100 "
+          className="d-block w-100 custom-img"
           src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/MA2024/GW/July/Unrec/3000/3._CB569386741_.jpg"
           alt="First slide"
         />
@@ -252,7 +252,7 @@ export default function Home()
       </Carousel.Item>
       <Carousel.Item style={{height:"350px"}} >
         <img
-          className="d-block w-100"
+          className="d-block w-100 custom-img"
           src="https://images-eu.ssl-images-amazon.com/images/G/31/INSLGW/pc_unrec_refresh._CB555261616_.jpg"
           alt="Second slide"
         />
@@ -262,7 +262,7 @@ export default function Home()
       </Carousel.Item>
       <Carousel.Item style={{height:"350px"}} >
         <img
-          className="d-block w-100"
+          className="d-block w-100 custom-img"
           src="https://m.media-amazon.com/images/I/61lwJy4B8PL._SX3000_.jpg"
           alt="Third slide"
         />
@@ -272,7 +272,7 @@ export default function Home()
       </Carousel.Item>
       <Carousel.Item style={{height:"350px"}} >
         <img
-          className="d-block w-100"
+          className="d-block w-100 custom-img"
           src="https://images-eu.ssl-images-amazon.com/images/G/31/CookwareDining/Aman/Primeday24/5300---Kitchen-hero---BAU---update_3000X1200._CB569213170_.jpg"
           alt="Fourth slide"
         />
@@ -282,7 +282,7 @@ export default function Home()
       </Carousel.Item>
       <Carousel.Item style={{height:"350px"}} >
         <img
-          className="d-block w-100"
+          className="d-block w-100 custom-img"
           src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Media/BAU/D132995370_Homepage_DesktopHeroTemplate_3000x1200._CB557152260_.jpg"
           alt="Fifth slide"
         />
@@ -292,7 +292,7 @@ export default function Home()
       </Carousel.Item>
       <Carousel.Item style={{height:"350px"}} >
         <img
-          className="d-block w-100"
+          className="d-block w-100 custom-img"
           src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG24/Smart_Watches/MED_MAY/Tall_Hero_1500X600_BAU_NewLaunches._CB554931622_.jpg"
           alt="Sixth slide"
         />
@@ -302,7 +302,7 @@ export default function Home()
       </Carousel.Item>
       <Carousel.Item style={{height:"350px"}} >
         <img
-          className="d-block w-100"
+          className="d-block w-100 custom-img"
           src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Wireless/devjyoti/GW/Uber/Nov/D103625178_DesktopTallHero_3000x1200_V3._CB558389732_.jpg"
           alt="Seveth slide"
         />
@@ -313,56 +313,60 @@ export default function Home()
     </Carousel>
     </Row>
 
-    <Row className="mt-4 ">
-      <Col xs={3}>
-      <img src={crd1} style={{width:"95%"}} />
+<Link to={'/decor'} style={{textDecoration:"none",cursor:"pointer"}}>
+    <Row className="mt-4 " style={{cursor:"pointer"}}>
+    <Col xs={12} sm={6} md={4} lg={3}>
+    <img src={crd1} style={{width:"95%"}} />
       </Col>
 
-      <Col xs={3}>
+      <Col xs={12} sm={6} md={4} lg={3}>
       <img src={crd2} style={{width:"95%"}} />
       </Col>
 
-      <Col xs={3}>
+      <Col xs={12} sm={6} md={4} lg={3}>
       <img src={crd3} style={{width:"95%"}} />
       </Col>
 
-      <Col xs={3}>
+      <Col xs={12} sm={6} md={4} lg={3}>
       <img src={crd4} style={{width:"95%"}} />
       </Col>
     </Row>
+    </Link>
 
 
-    <Row className="mt-4 bg-white p-3">
-    <h2 className="p-3"> Shop deals in top categories <span style={{fontSize:"15px"}} className="text-primary"> Explore all categories  </span>  </h2>
-      <Col xs={2}>
+    <Link to={'/decor'} style={{textDecoration:"none",cursor:"pointer"}}>
+    <Row className="mt-4 bg-white text-primary p-3">
+    <h2 className="p-3"> Shop deals in top categories <span style={{fontSize:"15px"}} className="text-dark"> Explore all categories  </span>  </h2>
+    <Col lg={2} sm={4} md={6}>
       <img src={require('../images/cs1.png')} style={{width:"95%"}} />
       </Col>
 
-      <Col xs={2}>
+      <Col lg={2} sm={4} md={6}>
       <img src={require('../images/cs2.png')} style={{width:"95%"}} />
       </Col>
 
-      <Col xs={2}>
+      <Col lg={2} sm={4} md={6}>
       <img src={require('../images/cs3.png')} style={{width:"95%"}} />
       </Col>
 
-      <Col xs={2}>
+      <Col lg={2} sm={4} md={6}>
       <img src={require('../images/cs4.png')} style={{width:"95%"}} />
       </Col>
 
-      <Col xs={2}>
+      <Col lg={2} sm={4} md={6}>
       <img src={require('../images/cs5.png')} style={{width:"95%"}} />
       </Col>
 
-      <Col xs={2}>
+      <Col lg={2} sm={4} md={6}>
       <img src={require('../images/cs6.png')} style={{width:"95%"}} />
       </Col>
     </Row>
+    </Link>
 
 
 {/* Home Decor */}
 
-<Link to={'/decor'} style={{textDecoration:"none"}}>
+<Link to={'/decor'} style={{textDecoration:"none",cursor:"pointer"}}>
   <Container fluid className="bg-light">
     <Row className="mt-4 bg-white  p-2">
       <h2 className="p-3"> Trendy home decor  <span style={{fontSize:"15px"}} className="text-dark"> See All Offer  </span>  </h2>
@@ -395,8 +399,9 @@ export default function Home()
 
 
     <Container fluid className="bg-light">
-    <Row className="mt-4 bg-white text-dark p-2">
-      <h2 className="p-2"> Minimum 40% off | Furniture | From local stores nearby  <span style={{fontSize:"15px"}} className="text-primary"> See All Offer  </span>  </h2>
+    <Link to={'/decor'} style={{textDecoration:"none",cursor:"pointer"}}>
+    <Row className="mt-4 bg-white  p-2">
+      <h2 className="p-2"> Minimum 40% off | Furniture | From local stores nearby  <span style={{fontSize:"15px"}} className="text-dark"> See All Offer  </span>  </h2>
     <Carousel controls={false} indicators={false} interval={3000} pause={true}>
       <Carousel.Item>
         <img 
@@ -435,29 +440,33 @@ export default function Home()
       </Carousel.Item>
     </Carousel>
     </Row>
+    </Link>
     </Container>
 
     <Container fluid className="bg-light">
+    <Link to={'/decor'} style={{textDecoration:"none",cursor:"pointer"}}>
       <Row className="mt-3  p-2">
-        <Col xs={3}>
+      <Col xs={12} sm={6} md={4} lg={3}>
         <img src={cat1} style={{width:"95%"}} />
         </Col>
 
-        <Col xs={3}>
+        <Col xs={12} sm={6} md={4} lg={3}>
         <img src={cat2} style={{width:"95%"}} />
         </Col>
 
-        <Col xs={3}>
+        <Col xs={12} sm={6} md={4} lg={3}>
         <img src={cat3} style={{width:"95%"}} />
         </Col>
 
-        <Col xs={3}>
+        <Col xs={12} sm={6} md={4} lg={3}>
         <img src={cat4} style={{width:"95%"}} />
         </Col>
       </Row>
+      </Link>
 
       <Row className="bg-white mt-3">
-        <h2 className="p-3"> Up to 70% off on | Bestselling smartwatches <span style={{fontSize:"15px"}} className="text-primary"> See All Offer  </span>  </h2>
+      <Link to={'/battery'} style={{textDecoration:"none",cursor:"pointer"}}>
+        <h2 className="p-3"> Up to 70% off on | Bestselling smartwatches <span style={{fontSize:"15px"}} className="text-dark"> See All Offer  </span>  </h2>
         <Carousel controls={false} indicators={true} interval={3000} pause={true} className="p-3" >
       <Carousel.Item>
         <img 
@@ -474,12 +483,13 @@ export default function Home()
         />
       </Carousel.Item>
     </Carousel>
+    </Link>
       </Row>
 
 
 {/* Inverter Battries */}
 
-<Link to={'/battery'} style={{textDecoration:"none" }} >
+<Link to={'/battery'} style={{textDecoration:"none",cursor:"pointer" }} >
 
       <Row className="mt-4 p-2 bg-white">
         <h2 className="p-3"> Up to 40% off | Inverter batteries | From local stores nearby  <span style={{fontSize:"15px"}} className="text-dark"> See All Offer  </span>  </h2>
@@ -488,7 +498,7 @@ export default function Home()
     </Link>  
     
 
-      <Row className="mt-4 bg-white text-dark p-2">
+      <Row className="mt-4 bg-white text-primary p-2">
       <h2 className="p-2"> Top deals curated from local stores nearby </h2>
     <Carousel controls={false} indicators={true} interval={3000} pause={true}>
       <Carousel.Item>
@@ -530,7 +540,8 @@ export default function Home()
     </Row>
 
     <Row className="mt-4 bg-white text-dark p-2">
-      <h2 className="p-2"> Electric scooters & two wheelers from stores nearby  <span style={{fontSize:"15px"}} className="text-primary"> See All Offer  </span>  </h2>
+    <Link to={'/battery'} style={{textDecoration:"none",cursor:"pointer"}}>
+      <h2 className="p-2"> Electric scooters & two wheelers from stores nearby  <span style={{fontSize:"15px"}} className="text-dark"> See All Offer  </span>  </h2>
     <Carousel controls={true} indicators={true} >
       <Carousel.Item>
         <img 
@@ -561,10 +572,12 @@ export default function Home()
         />
       </Carousel.Item>
     </Carousel>
+    </Link>
     </Row>
 
     <Row className="bg-white mt-4">
-        <h2 className="p-3"> Starting ₹99 + 20% cashback on first order | Beauty & makeup <span style={{fontSize:"15px"}} className="text-primary"> See All Offer  </span>  </h2>
+    <Link to={'/kitchen'} style={{textDecoration:"none",cursor:"pointer"}}>
+        <h2 className="p-3"> Starting ₹99 + 20% cashback on first order | Beauty & makeup <span style={{fontSize:"15px"}} className="text-dark"> See All Offer  </span>  </h2>
         <Carousel controls={true} indicators={false} interval={3000} pause={true} className="p-3" >
       <Carousel.Item>
         <img 
@@ -588,36 +601,40 @@ export default function Home()
         />
       </Carousel.Item>
     </Carousel>
+    </Link>
       </Row>
+
 
     <Row className="p-3 mt-2 bg-light ">
       <img src={sho} style={{width:"70%" , marginLeft:"15%"}}/>
     </Row>
 
+    <Link to={'/decor'} style={{textDecoration:"none",cursor:"pointer"}} >
     <Row className="mt-2  p-2">
-        <Col xs={3}>
-        <img src={f1} style={{width:"95%"}} />
+    <Col xs={12} sm={6} md={4} lg={3}>
+    <img src={f1} style={{width:"95%"}} />
         </Col>
 
-        <Col xs={3}>
+        <Col xs={12} sm={6} md={4} lg={3}>
         <img src={f2} style={{width:"95%"}} />
         </Col>
 
-        <Col xs={3}>
+        <Col xs={12} sm={6} md={4} lg={3}>
         <img src={f3} style={{width:"95%"}} />
         </Col>
 
-        <Col xs={3}>
+        <Col xs={12} sm={6} md={4} lg={3}>
         <img src={f4} style={{width:"95%"}} />
         </Col>
       </Row>
+      </Link>
 
+      <Link to={'/decor'} style={{textDecoration:"none",cursor:"pointer"}} >
       <Row className="mt-4 bg-white">
-      <h2 className="p-3"> Amazon Ads & Kurtis Section <span style={{fontSize:"15px"}} className="text-primary"> See All Offer  </span>  </h2>
-        <Col xs={4}>
-        <iframe width="98%" height="300px" src="https://www.youtube.com/embed/REscpOYqGII" title="Introduction to Amazon Ads" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <h2 className="p-3"> Amazon Ads & Kurtis Section <span style={{fontSize:"15px"}} className="text-dark"> See All Offer  </span>  </h2>
+      <Col lg={4} sm={3} md={2}>        <iframe width="98%" height="300px" src="https://www.youtube.com/embed/REscpOYqGII" title="Introduction to Amazon Ads" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </Col>
-        <Col xs={8}> 
+        <Col lg={8} sm={6} md={4} >
         <Carousel controls={true} indicators={true} >
       <Carousel.Item>
         <img 
@@ -650,28 +667,32 @@ export default function Home()
     </Carousel>
         </Col>
       </Row>
+      </Link>
 
+
+      <Link to={'/decor'} style={{textDecoration:"none",cursor:"pointer"}} >
       <Row className="mt-3  p-2">
-        <Col xs={3}>
+      <Col xs={12} sm={6} md={4} lg={3}>
         <img src={p5} style={{width:"95%"}} />
         </Col>
 
-        <Col xs={3}>
+        <Col xs={12} sm={6} md={4} lg={3}>
         <img src={p3} style={{width:"95%"}} />
         </Col>
 
-        <Col xs={3}>
+        <Col xs={12} sm={6} md={4} lg={3}>
         <img src={p4} style={{width:"95%"}} />
         </Col>
 
-        <Col xs={3}>
+        <Col xs={12} sm={6} md={4} lg={3}>
         <img src={p2} style={{width:"95%"}} />
         </Col>
       </Row>
+      </Link>
 
 {/* kitchen Section */}
 
-<Link to={'/kitchen'} style={{textDecoration:"none"}} >
+<Link to={'/kitchen'} style={{textDecoration:"none",cursor:"pointer"}} >
 
       <Row className="mt-4 bg-white p-3">
       <h2 className="p-3"> Up to 60% off | Kitchen essentials | From local stores nearby  <span style={{fontSize:"15px"}} className="text-dark"> See All Offer  </span>  </h2>
@@ -723,18 +744,17 @@ export default function Home()
      
       <Container fluid className="bg-white p-2">  
        <Row className="bg-white text-dark text-center">
-       <Col xs={4}>
-       </Col>
+       <Col xs={4} sm={3} md={2}>       </Col>
 
-        <Col xs={4} className="w-100">
+       <Col xs={4} sm={3} md={2} className="w-100">
         <p> See personalized recommendations </p>
-        <Link to={'/signin'} style={{textDecoration:"none"}} >
+        <Link to={'/signin'} style={{textDecoration:"none",cursor:"pointer"}} >
        <Button className="w-25" variant="warning">Sign in</Button>{' '}
        </Link>       <br></br>
        <p> New customer?  </p>
        </Col>
 
-       <Col xs={4}>
+       <Col xs={4} sm={3} md={2}>       
        </Col>
        </Row>
        <hr></hr>
@@ -753,7 +773,8 @@ export default function Home()
 
       <Container className=" bg-dark w-75">
         <Row className="mt-5">
-          <Col xs={3} className="text-left">
+        <Col xs={12} sm={6} md={4} lg={3}
+        className="text-left">
           <h5> Get to Know Us </h5>
          <p> About Us </p>
          <p> Careers </p>
@@ -761,14 +782,16 @@ export default function Home()
          <p> Amazon Science </p>
           </Col>
 
-          <Col xs={3} className="text-left">
+          <Col xs={12} sm={6} md={4} lg={3}
+          className="text-left">
           <h5> Connect with Us </h5>
           <p> Facebook </p>
           <p>Twitter </p>
           <p>Instagram </p>
           </Col>
 
-          <Col xs={3} className="text-left">
+          <Col xs={12} sm={6} md={4} lg={3}
+          className="text-left">
           <h5> 	Make Money with Us </h5>
           <p>Sell on Amazon </p>
           <p>Sell under Amazon Accelerator </p>
@@ -781,7 +804,8 @@ export default function Home()
 
           </Col>
 
-          <Col xs={3} className="text-left">
+          <Col xs={12} sm={6} md={4} lg={3}
+          className="text-left">
           <h5> Let Us Help You </h5>
           <p>COVID-19 and Amazon </p>
           <p>Your Account </p>

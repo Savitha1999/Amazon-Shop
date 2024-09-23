@@ -15,6 +15,8 @@ import amz from '../images/amz.png';
 
 export default function Signin()
 {
+
+  
     const [selectedCountry, setSelectedCountry] = useState({
         name: 'Country',
         flag: 'https://dummyimage.com/20x15/ccc/000&text=Flag', // Default flag image URL
@@ -65,19 +67,23 @@ export default function Signin()
 
 {/* Top & NavBar */}
 
-            <Row>
-                <Col xs={1} >
-                <Link to={'/'}>
+
+
+
+
+ <Row>
+                <Col  xs={6} md={2} lg={1} >
+                <Link to={'/amazon'} >
                 <img src="https://zeevector.com/wp-content/uploads/LOGO/Amazon-India-Logo-PNG-White.png" style={{width:"100px",height:"50px"}} />   
                 </Link>
                 </Col>
 
-                <Col xs={3} className="text-center" >
+                <Col xs={6} md={6} lg={3} className="text-center" >
                 <p>Delivering to Coimbatore 641015 <br></br>
                  <b> <IoLocationOutline /> Update Location </b> </p>
                 </Col>
 
-                <Col xs={5} className="seach">
+                <Col xs={12} md={6} lg={5} className="seach">
                 <select className=" bg-light mt-1" style={{width:"60px" ,height:"44px"}}>
                     <option value="">All </option>
                     <option value="Allxa Skils"> Allxa Skils </option>
@@ -97,10 +103,12 @@ export default function Signin()
                     <option value="Garden & Outdoors"> Garden & Outdoors </option>
                     <option value="Home & Kitchen "> Home & Kitchen </option>
                 </select>
-                <input type="text" className="p-2 mt-1"  style={{width:"60%"}}
+                <input type="text" className="p-2 mt-1"  
+                style={{width:"60%"}}
                 placeholder="Search Amazon" /> 
                 <span className="p-2" style={{backgroundColor:"rgb(254,189 ,105)"}} > <FaSearch style={{marginBottom:"5px",width:"40px"}} /> </span>
-                
+
+
                 <Dropdown as={ButtonGroup}   style={{width:"30px",marginLeft:"10px"}}>
               <Dropdown.Toggle  className="p-2 bg-white text-black" id="dropdown-basic">
                 <img
@@ -113,50 +121,58 @@ export default function Signin()
                 {selectedCountry.name}
               </Dropdown.Toggle>
 
-              <Dropdown.Menu >
-                {countryFlags.map((country, index) => (
-                  <Dropdown.Item key={index}  onClick={() => handleCountrySelect(country)}>
-                    <img
-                      src={country.flag}
-                      alt={country.name}
-                      width="20"
-                      height="15"
-                      style={{ marginRight: '5px' }}
-                    />
-                    {country.name}
-                  </Dropdown.Item>
-                ))}
-              </Dropdown.Menu>
+
+
+<Dropdown as={ButtonGroup} style={{ width: "30px", marginLeft: "10px" }}>
+  <Dropdown.Toggle className="p-2 bg-white text-black dropdown-toggle" id="dropdown-basic">
+    <img
+      src={selectedCountry.flag}
+      alt={selectedCountry.name}
+      width="20"
+      height="15"
+      style={{ marginRight: '5px' }}
+    />
+    {selectedCountry.name}
+  </Dropdown.Toggle>
+  <Dropdown.Menu>
+    {/* Dropdown items here */}
+  </Dropdown.Menu>
+</Dropdown>
+
             </Dropdown>      
             </Col>
 
-            <Col xs={1} className="">
-                <Dropdown className="bg-dark">
-                <Dropdown.Toggle className="text-white" id="dropdown-basic">
-                   Sign in  <br></br>
-                   <b>Accounts </b>
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1"> <img src={amz} /> </Dropdown.Item>
-                </Dropdown.Menu>
-                </Dropdown>   
-            </Col>
+            <Col xs={6} md={2} lg={1} className="custom-class">
+  <Dropdown className="bg-dark">
+    <Dropdown.Toggle className="text-white" id="dropdown-basic">
+      Sign in <br />
+      <b>Accounts</b>
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      <Dropdown.Item href="#/action-1">
+        <img src={amz} />
+      </Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+</Col>
 
-            <Col xs={1} className="text-white bg-dark text-center">
-            <Link to={'/signin'} style={{textDecoration:"none" , color:"White"}}>
-                <p>  Returns & <br></br>
-                <b> Orders </b></p> 
-              </Link>          
-            </Col>
+<Col xs={6} md={2} lg={1} className="custom-class text-white bg-dark text-center">
+  <Link to={'/signin'} style={{ textDecoration: "none", color: "White" }}>
+    <p>Returns & <br />
+      <b>Orders</b></p>
+  </Link>
+</Col>
 
-            <Col xs={1} className="text-center">
+            <Col xs={6} md={2} lg={1} className="custom-cart text-center">
+            <Link to={'/cart'} style={{textDecoration:"none", color:"white"}} >          
             <IoCartOutline  style={{fontSize:"40px"}}/> <br></br>
              Cart 
-            </Col>
+             </Link> 
+            </Col>         
             </Row>
 
             <Row  style={{backgroundColor:"rgb(35,47,62)"}}>
-            <Col xs={10}>
+            <Col xs={12} lg={10}>
         <Nav variant="underline" >
       <Nav.Item>
         <Nav.Link style={{ color: "white", marginLeft:"15px" }} > <FaBars />  All</Nav.Link>
@@ -194,68 +210,57 @@ export default function Signin()
     </Nav>
     </Col>
 
-
-        <Col xs={2}>
+        <Col xs={12} lg={2}>
         </Col>
     </Row>
-    </Container>  
+    </Container>    
 
 
     {/* Sign in Section */}
 
 
-    <Container fluid className="bg-white text-center ">
-        <img src={amzin} className="p-3" />
-        <Row className="">
-            <Col xs={4}>
-            </Col>
-
-            <Col xs={4}>
-            <form style={{border:"1px solid black"}} className="p-3" onSubmit={handleSubmit} >
-                <h2 className="text-left"  > SIGN IN </h2>
-                <br/>
-                <p style={{marginRight:"110px"}}> Email or mobile phone number </p>
-                <input type="text"
-                className="w-75 p-2"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)} 
-                style={{ borderRadius:"20px"}} />
+<Container fluid className="bg-white text-center">
+    <img src={amzin} className="p-3" alt="Logo" />
+    <Row className="justify-content-center">
+        <Col xs={12} md={6} lg={4}>
+            <form style={{ border: "1px solid black" }} className="p-3" onSubmit={handleSubmit}>
+                <h2 className="text-left">SIGN IN</h2>
                 <br />
-                <br />
+                <label className="text-left" style={{ display: "block" }}>Email </label>
+                <input
+                    type="email"
+                    className="form-control mb-3"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    style={{ borderRadius: "20px", width:"50%",marginLeft:"25%" }}
+                />
+                
+                <label className="text-left" style={{ display: "block" }}>Password</label>
+                <input
+                    type="password" 
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="form-control mb-3"
+                    style={{ borderRadius: "20px" , width:"50%",marginLeft:"25%" }}
+                />
 
-                <p style={{marginRight:"270px"}}> Password </p>
-                <input type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-75 p-2" style={{ borderRadius:"20px"}} />
-                <br />
-                <br />
+                <input
+                    type="submit"
+                    value="Sign In"
+                    className="btn btn-warning w-100 mb-3"
+                    style={{ borderRadius: "10px" }}
+                />
+                
+                {isSuccess && <p className="text-success"><b>Signed in successfully!</b></p>}
 
-                <input type="submit" value="Sign In"
-                 className="w-75 bg-warning p-2"
-                 style={{border:"none" ,  borderRadius:"10px"}} />
-                 <br/>
-                 <br/>
-
-                 {isSuccess && <p className="text-success"> <b> Signed in successfully! </b> </p>} {/* Success message */}
-
-                 <p> By continuing, you agree to Amazon's Conditions of Use and Privacy Notice. </p>
-                 <hr></hr>
-            
-
-            <Button className="btn btn-light w-75"> Create Your Amazon Account  </Button>
-
+                <p>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</p>
+                <hr />
+                <Button className="btn btn-light w-100">Create Your Amazon Account</Button>
             </form>
+        </Col>
+    </Row>
+</Container>
 
-
-            </Col>
-
-            <Col xs={4}>
-            </Col>
-        </Row>
-    </Container>
-
- 
 
 
     {/* Footer Section */}

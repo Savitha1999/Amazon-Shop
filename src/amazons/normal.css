@@ -42,6 +42,17 @@
   }
   
 
+  .custom-img {
+    height: auto; /* Adjusts the height based on width */
+    max-height: 350px; /* Sets a maximum height */
+  }
+  
+  @media (max-width: 768px) {
+    .custom-img {
+      max-height: 200px; /* Decrease height for mobile */
+    }
+  }
+
   /* Add this to your CSS file */
 @media (max-width: 768px) {
   .custom-class {
@@ -55,6 +66,8 @@
     font-size: 18px;
     /* other styles for larger screens */
   }
+
+  
 }
 
 
@@ -82,4 +95,14 @@
   .custom-cart {
     display: block;
   }
+
+ 
 }
+
+
+@media (max-width: 768px) { /* Adjust the max-width as needed for your breakpoints */
+  .dropdown-toggle {
+    display: none;
+  }
+}
+

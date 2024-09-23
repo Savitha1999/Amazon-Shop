@@ -24,7 +24,7 @@ export default function Main()
         <Routes>
        
 
-            <Route path="/" element={<Home /> } />
+            <Route path="/amazon" element={<Home /> } />
             <Route path="/kitchen" element={<Kitchen />} />
             <Route path="/battery" element={<Battery />} />
             <Route path="/signin" element={<Signin />} />

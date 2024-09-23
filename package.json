@@ -1,6 +1,7 @@
 {
   "name": "amazonin",
   "version": "0.1.0",
+  "homepage": "https://www.savitha.online/amazon/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.13.0",

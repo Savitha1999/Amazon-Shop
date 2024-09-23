@@ -55,7 +55,7 @@ export default function Kitchen()
 
             <Row>
                 <Col  xs={6} md={2} lg={1} >
-                <Link to={'/'} >
+                <Link to={'/amazon'} >
                 <img src="https://zeevector.com/wp-content/uploads/LOGO/Amazon-India-Logo-PNG-White.png" style={{width:"100px",height:"50px"}} />   
                 </Link>
                 </Col>
@@ -103,20 +103,22 @@ export default function Kitchen()
                 {selectedCountry.name}
               </Dropdown.Toggle>
 
-              <Dropdown.Menu  >
-                {countryFlags.map((country, index) => (
-                  <Dropdown.Item key={index}  onClick={() => handleCountrySelect(country)}>
-                    <img
-                      src={country.flag}
-                      alt={country.name}
-                      width="20"
-                      height="15"
-                      style={{ marginRight: '5px' }}
-                    />
-                    {country.name}
-                  </Dropdown.Item>
-                ))}
-              </Dropdown.Menu>
+              <Dropdown as={ButtonGroup} style={{ width: "30px", marginLeft: "10px" }}>
+  <Dropdown.Toggle className="p-2 bg-white text-black dropdown-toggle" id="dropdown-basic">
+    <img
+      src={selectedCountry.flag}
+      alt={selectedCountry.name}
+      width="20"
+      height="15"
+      style={{ marginRight: '5px' }}
+    />
+    {selectedCountry.name}
+  </Dropdown.Toggle>
+  <Dropdown.Menu>
+    {/* Dropdown items here */}
+  </Dropdown.Menu>
+</Dropdown>
+
             </Dropdown>      
             </Col>
 
