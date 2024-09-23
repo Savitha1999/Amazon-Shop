@@ -219,43 +219,43 @@ export default function Signin()
     {/* Sign in Section */}
 
 
-<Container fluid className="bg-white text-center">
+<Container fluid className="bg-white  p-4 text-center">
     <img src={amzin} className="p-3" alt="Logo" />
     <Row className="justify-content-center">
         <Col xs={12} md={6} lg={4}>
-            <form style={{ border: "1px solid black" }} className="p-3" onSubmit={handleSubmit}>
-                <h2 className="text-left">SIGN IN</h2>
+            <form style={{ border: "1px solid black",borderRadius:"20px" }} className="p-4" onSubmit={handleSubmit}>
+                <h2 className="text-left text-primary">SIGN IN</h2>
                 <br />
-                <label className="text-left" style={{ display: "block" }}>Email </label>
+                <label className="text-start p-2" style={{ display: "block",color:"green",fontWeight:"bold" }}>Email </label>
                 <input
                     type="email"
-                    className="form-control mb-3"
+                    className="form-control w-100 mb-3"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    style={{ borderRadius: "20px", width:"50%",marginLeft:"25%" }}
+                    style={{ borderRadius: "20px" }}
                 />
                 
-                <label className="text-left" style={{ display: "block" }}>Password</label>
+                <label className="text-start p-2" style={{ display: "block",color:"green",fontWeight:"bold" }}>Password</label>
                 <input
                     type="password" 
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="form-control mb-3"
-                    style={{ borderRadius: "20px" , width:"50%",marginLeft:"25%" }}
+                    className="form-control w-100 mb-3"
+                    style={{ borderRadius: "20px" }}
                 />
 
                 <input
                     type="submit"
                     value="Sign In"
-                    className="btn btn-warning w-100 mb-3"
-                    style={{ borderRadius: "10px" }}
+                    className="btn btn-warning w-50 mb-3"
+                    style={{ borderRadius: "50px" }}
                 />
                 
                 {isSuccess && <p className="text-success"><b>Signed in successfully!</b></p>}
 
                 <p>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</p>
                 <hr />
-                <Button className="btn btn-light w-100">Create Your Amazon Account</Button>
+                <Button className="btn btn-danger w-100">Create Your Amazon Account</Button>
             </form>
         </Col>
     </Row>
@@ -263,69 +263,6 @@ export default function Signin()
 
 
 
-    {/* Footer Section */}
-
-    <Container fluid className="foot text-white mt-4 bg-dark ">
-
-      <Row style={{backgroundColor:"rgb(35,47,62)"}}>
-        <p className="mt-3 text-center"> Back To Top </p>
-      </Row>
-
-      <Container className=" bg-dark w-75">
-        <Row className="mt-5">
-          <Col xs={3} className="text-left">
-          <h5> Get to Know Us </h5>
-         <p> About Us </p>
-         <p> Careers </p>
-         <p> Press Releases </p>
-         <p> Amazon Science </p>
-          </Col>
-
-          <Col xs={3} className="text-left">
-          <h5> Connect with Us </h5>
-          <p> Facebook </p>
-          <p>Twitter </p>
-          <p>Instagram </p>
-          </Col>
-
-          <Col xs={3} className="text-left">
-          <h5> 	Make Money with Us </h5>
-          <p>Sell on Amazon </p>
-          <p>Sell under Amazon Accelerator </p>
-          <p>Protect and Build Your Brand </p>
-          <p>Amazon Global Selling </p>
-          <p>Become an Affiliate </p>
-          <p>Fulfilment by Amazon </p>
-          <p>Advertise Your Products </p>
-          <p>Amazon Pay on Merchants </p>
-
-          </Col>
-
-          <Col xs={3} className="text-left">
-          <h5> Let Us Help You </h5>
-          <p>COVID-19 and Amazon </p>
-          <p>Your Account </p>
-          <p>Returns Centre </p>
-          <p>Recalls and Product Safety Alerts </p>
-          <p>100% Purchase Protection </p>
-          <p>Amazon App Download </p>
-          <p>Help </p>
-          </Col>
-        </Row>
-      </Container>
-
-      <Row style={{backgroundColor:"rgb(35,47,62)"}}>
-        <p className="mt-3 text-center p-1">
-          Conditions of Use & Sale
-          Privacy Notice
-          Interest-Based Ads 
-        <br></br>
-        © 1996-2024, Amazon.com, Inc. or its affiliates
-        </p>
-
-      </Row>
-  
-    </Container>  
         
         </>
     )
